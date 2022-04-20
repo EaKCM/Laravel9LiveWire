@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+});
+// dashboard/user
+route::prefix('dashboard')->middleware(['auth:sanctum', 'verified'])->group(function() {
+    Route::get('/user',[UsersController::class, 'index'] )->name('user.index');
 });

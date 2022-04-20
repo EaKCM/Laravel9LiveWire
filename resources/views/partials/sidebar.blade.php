@@ -98,8 +98,8 @@
                     DashBoard
                 </a>
             </li>
-            <li class="{{ request()->routeis('welcome') ? 'active': ''}}">
-                <a href="{{route('welcome') }}">
+            <li class="{{ request()->routeIs('user.index') ? 'active': ''}}">
+                <a href="{{route('user.index') }}">
                     <ion-icon name="person"></ion-icon>
                     ข้อมูลผู้ใช้งาน
                 </a>
